@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TKGroopBG.Models.Order>
+@{
+    ViewBag.Title = "Поръчки"; Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="h1">Поръчки</h1>
+
+<p><a asp-action="Create" class="btn btn-primary">Нова поръчка</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Клиент</th>
+            <th>Продукт</th>
+            <th>Дата</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var o in Model)
+        {
+            <tr>
+                <td>@o.Id</td>
+                <td>@o.CustomerName</td>
+                <td>@o.Product</td>
+                <td>@o.Date.ToString("dd.MM.yyyy")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@o.Id" class="btn btn-ghost">Виж</a>
+                    <a asp-action="Edit" asp-route-id="@o.Id" class="btn btn-secondary">Редактирай</a>
+                    <a asp-action="Delete" asp-route-id="@o.Id" class="btn">Изтрий</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

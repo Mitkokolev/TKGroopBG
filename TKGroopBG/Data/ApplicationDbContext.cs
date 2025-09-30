@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TKGroopBG.Models;
 
 namespace TKGroopBG.Data
 {
@@ -9,5 +10,6 @@ namespace TKGroopBG.Data
             : base(options)
         {
         }
+        public DbSet<TKGroopBG.Models.Order> Order { get; set; } = default!;
     }
 }
