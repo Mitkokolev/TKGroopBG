@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+    var title = ViewBag.Title ?? "TKGroopBG";
+}
+<!doctype html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@title - TKGroopBG</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="tk-header">
+        <nav class="tk-nav">
+            <div class="tk-brand">TKGroopBG</div>
+            <ul class="tk-menu">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Начало</a></li>
+                <li><a asp-controller="Orders" asp-action="Index">Поръчки</a></li>
+                <li><a asp-controller="Products" asp-action="Index">Продукти</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="tk-main">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+
+
+    <footer class="tk-footer">
+        <div class="container">
+            <p>© @DateTime.Now.Year TKGroopBG — Всички права запазени</p>
+        </div>
+    </footer>
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

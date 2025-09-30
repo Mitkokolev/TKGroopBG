@@ -1,0 +1,98 @@
+:root {
+    --tk-red: #c2181b; 
+    --tk-pale-gray: #f4f5f6; 
+    --tk-black: #0b0b0b; 
+    --tk-white: #ffffff; 
+    --max-width: 1100px;
+    --radius: 10px;
+    --shadow: 0 6px 18px rgba(11,11,11,0.08);
+    --text-default: #222;
+}
+
+
+* {
+    box-sizing: border-box
+}
+
+html, body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Roboto, "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(180deg,var(--tk-pale-gray) 0%, #ffffff 100%);
+    color: var(--text-default);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 24px;
+}
+
+
+.tk-header {
+    background: var(--tk-black);
+    color: var(--tk-white);
+    position: sticky;
+    top: 0;
+    z-index: 1000
+}
+
+.tk-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px
+}
+
+.tk-brand {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 0.6px;
+    color: var(--tk-red)
+}
+
+.tk-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 14px
+}
+
+    .tk-menu li a {
+        color: var(--tk-white);
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: background .18s, color .18s;
+    }
+
+        .tk-menu li a:hover {
+            background: rgba(255,255,255,0.06)
+        }
+
+.tk-main {
+    padding: 28px 0;
+    min-height: 70vh
+}
+
+.card {
+    background: var(--tk-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
